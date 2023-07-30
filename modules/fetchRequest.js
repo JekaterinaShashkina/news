@@ -1,4 +1,4 @@
-const URL = './headlines.json';
+const URL = 'https://newsapi.org/v2';
 
 const fetchRequest = async (
   postfix,
@@ -13,7 +13,7 @@ const fetchRequest = async (
     if (headers) options.headers = headers;
 
     const response = await fetch(`${URL}${postfix}`, options);
-
+    console.log(response);
     if (response.ok) {
       const data = await response.json();
       console.log(data);
